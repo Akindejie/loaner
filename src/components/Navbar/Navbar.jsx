@@ -5,21 +5,43 @@ import * as Scroll from 'react-scroll';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
 
 let LinkScroll = Scroll.Link;
-const Navbar = () => {
+const Navbar = ({ openSidebar, toggler }) => {
   return (
-    <div className="nav">
+    <div className={'nav ' + (openSidebar && 'active')}>
       <div className="container">
         <Link className="nav-logo" to="/">
-          Dollar
+          Loaner
         </Link>
-        <div className="mobile-icon">
-          <FingerprintIcon />
-        </div>
         <ul>
           <li>
-            <LinkScroll className="link-scroll" to="about">About</LinkScroll>
+            <LinkScroll className="link-scroll" to="about">
+              About
+            </LinkScroll>
+          </li>
+          <li>
+            <LinkScroll className="link-scroll" to="discover">
+              Discover
+            </LinkScroll>
+          </li>
+          <li>
+            <LinkScroll className="link-scroll" to="services">
+              Services
+            </LinkScroll>
+          </li>
+          <li>
+            <LinkScroll className="link-scroll" to="signup">
+              Sign Up
+            </LinkScroll>
           </li>
         </ul>
+        <div className="nav-button">
+          <Link className="nav-button-link" to="signin">
+            Sign In
+          </Link>
+        </div>
+        <div className="mobile-icon">
+          <FingerprintIcon onClick={toggler} />
+        </div>
       </div>
     </div>
   );
