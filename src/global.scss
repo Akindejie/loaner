@@ -8,25 +8,3 @@ $width: 768px;
     @content;
   }
 }
-
-button {
-  border-radius: 50px;
-  background: black;
-  white-space: nowrap;
-  padding: 14px;
-  color: white;
-  font-size: 20px;
-  outline: none;
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    background: white;
-    color: black;
-    transition: all 0.2s ease-in-out;
-  }
-}

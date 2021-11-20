@@ -1,13 +1,17 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages';
+import SignInPage from './pages/SignInPage';
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Home />
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/signin" element={<SignInPage />} />
+        </Routes>
       </Router>
     </div>
   );
