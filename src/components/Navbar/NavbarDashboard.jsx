@@ -7,7 +7,7 @@ import FingerprintIcon from '@mui/icons-material/Fingerprint';
 let LinkScroll = Scroll.Link;
 let Anime = Scroll.animateScroll;
 
-const Navbar = ({ toggler }) => {
+const NavbarDashboard = ({ toggler }) => {
   const [scrollNav, setScrollNav] = useState(false);
 
   const changeNav = () => {
@@ -29,9 +29,12 @@ const Navbar = ({ toggler }) => {
   return (
     <Nav scrollNav={scrollNav}>
       <NavbarContainer>
-        <NavLogo to="/" onClick={toggleHome}>
+        <ProfileIcon>
+          <img src="./images/profile-woman.png" alt="profile" />
+        </ProfileIcon>
+        {/* <NavLogo to="/" onClick={toggleHome}>
           Loaner
-        </NavLogo>
+        </NavLogo> */}
         <MobileIcon>
           <FingerprintIcon onClick={toggler} />
         </MobileIcon>
@@ -72,23 +75,22 @@ const Navbar = ({ toggler }) => {
               Services
             </NavLinks>
           </NavItem>
-          <NavItem>
+          {/* <NavItem>
             <NavSignUpLink to="/signup">Sign Up</NavSignUpLink>
-          </NavItem>
+          </NavItem> */}
         </NavMenu>
         <NavButton>
-          <NavSignInLink to="/signin">Sign In</NavSignInLink>
-          <NavSignInLink to="/adminsignin">Admin Sign In</NavSignInLink>
+          <NavSignInLink to="/">Log Out</NavSignInLink>
         </NavButton>
       </NavbarContainer>
     </Nav>
   );
 };
 
-export default Navbar;
+export default NavbarDashboard;
 
 const Nav = styled.nav`
-  background: ${({ scrollNav }) => (scrollNav ? 'black' : 'transparent')};
+  background: ${({ scrollNav }) => (scrollNav ? 'black' : '#101522')};
   height: 80px;
   margin-top: -80px;
   display: flex;
@@ -112,6 +114,19 @@ const NavbarContainer = styled.div`
   width: 100%;
   padding: 0 24px;
   max-width: 66%;
+`;
+
+const ProfileIcon = styled.div`
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 const NavLogo = styled(Link)`

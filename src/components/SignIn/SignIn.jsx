@@ -7,6 +7,8 @@ const SignIn = () => {
     <SignInContainer>
       <FormWrapper>
         <Icon to="/">Loaner</Icon>
+        {/* shortcut to dashboard */}
+        <TemporaryLink to="/dashboard">Shortcut to Dashboard</TemporaryLink>
         <FormContent>
           <Form action="#">
             <FormH1>Sign in to your account</FormH1>
@@ -59,6 +61,18 @@ const Icon = styled(Link)`
   color: white;
   font-weight: 700;
   font-size: 32px;
+
+  @media screen and (max-width: 480px) {
+    margin-left: 16px;
+    margin-top: 8px;
+  }
+`;
+
+const TemporaryLink = styled(Link)`
+  text-decoration: none;
+  color: white;
+  font-weight: 300;
+  font-size: 22px;
 
   @media screen and (max-width: 480px) {
     margin-left: 16px;

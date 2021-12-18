@@ -19,13 +19,14 @@ const Hero = () => {
           autoPlay
           loop
           muted
-          src="../../videos/money-zoom.mp4"
+          src="/videos/money-zoom.mp4"
           type="video/mp4"
         />
       </HeroBackground>
       <HeroContent>
-        <HeroH1>Loan made easy</HeroH1>
-        <HeroP>Sign up for new account</HeroP>
+        <HeroH1>Online Personal Loans Processed Quickly</HeroH1>
+        <HeroP>Quick Loans of ₦100,000 to ₦5,000,000</HeroP>
+        <HeroP>Borrow from 3 to 36 months</HeroP>
         <HeroButtonWrapper>
           <SignUpButton
             to="signup"
